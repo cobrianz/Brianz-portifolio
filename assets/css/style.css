@@ -186,8 +186,13 @@ aside {
 
 .hero-sidebar_details a:hover {
     transition: var(--transition);
-    background-color: var(--bg);
-    color: var(--white);
+    background-color: var(--bg);        
+    color: var(--white); 
+} 
+
+.hero-sidebar_details .active {
+    background: var(--bg);
+    color: var(--white); 
 }
 
 .main{

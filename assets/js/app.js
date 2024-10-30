@@ -22,3 +22,30 @@ function resetText() {
 }
 
 typeText();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebarLinks = document.querySelectorAll('.hero-sidebar_details a');
+    const sections = document.querySelectorAll('.main');
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            
+            const targetSection = link.getAttribute('data-section');
+
+            // Hide all sections
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Remove active class from all links
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show the selected section and add active class to clicked link
+            document.getElementById(targetSection).style.display = 'block';
+            link.classList.add('active');
+        });
+    });
+});
