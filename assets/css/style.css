@@ -449,3 +449,31 @@ aside {
     width: 70%;
     font-size: 4rem;
 }
+
+
+/* featured projects */
+
+.featured-projects {
+    width: inherit;
+}
+
+.featured-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;     
+    width: inherit;
+}
+
+.featured-projects h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--black);
+    border-left: 4px solid var(--bg);
+    padding-left: 1rem;
+    
+}
+
+.featured-projects p{
+    width: 75%;
+}
