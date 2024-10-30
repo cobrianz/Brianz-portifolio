@@ -346,9 +346,10 @@ aside {
 
 
 .brief-me-details p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: 1.2px;
     line-height: 2rem;
+    width: 90%;
 }
 
 .brief-me-details p span {
@@ -360,11 +361,21 @@ aside {
     background-color: var(--bg);
     border-radius: 8px;
     display: flex;
-    width: fit-content;
+    width: 10rem;
     align-items: center;
     justify-content: center;
+    line-break: unset;
     gap: 1rem;
-    font-size: 1rem;
+    font-size: .8rem;
+    padding: 5px 1px;
+    transition: var(--transition);
+}
+
+.brief-me-details a:hover{
+    background: transparent;
+    transition: var(--transition);
+    color: var(--black);
+    border: 1px solid var(--black);
 }
 
 /* LANGUAGE CARDS */
