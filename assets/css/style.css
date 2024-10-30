@@ -287,11 +287,6 @@ aside {
     padding-right: 1rem;
 }
 
-.hero-right {
-
-
-}
-
 .hero-right > div {
     position: absolute;
     width: 400px;
@@ -356,10 +351,10 @@ aside {
     color: var(--bg);
 }
 
-.brief-me-details a {
+ .btn{
     color: var(--white);
     background-color: var(--bg);
-    border-radius: 8px;
+    border-radius: 2rem;
     display: flex;
     width: 10rem;
     align-items: center;
@@ -367,11 +362,12 @@ aside {
     line-break: unset;
     gap: 1rem;
     font-size: .8rem;
-    padding: 5px 1px;
+    padding: 10px;
     transition: var(--transition);
+    height: fit-content;
 }
 
-.brief-me-details a:hover{
+.btn:hover{
     background: transparent;
     transition: var(--transition);
     color: var(--black);
@@ -387,6 +383,7 @@ aside {
     padding: 2rem 0;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-top: 4rem;
 }
 
 .languages-container .language-card {
@@ -421,4 +418,34 @@ aside {
 
 .language-card p {
     font-size: 14px;
+}
+
+/* Hero feature */
+
+.hero-feature {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(../images/bg.png);
+    padding: 8rem;
+    width: 100%;
+    color: var(--white);
+}
+
+.hero-feature > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.hero-feature .btn:hover {
+    color: var(--white);
+    background: var(--black);
+    border: 1px dotted var(--white);
+}
+
+.hero-feature > div h1 {
+    width: 70%;
+    font-size: 4rem;
 }
