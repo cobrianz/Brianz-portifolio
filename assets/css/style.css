@@ -367,3 +367,47 @@ aside {
     font-size: 1rem;
 }
 
+/* LANGUAGE CARDS */
+
+.languages-container {
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.languages-container .language-card {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 300px;
+    padding: 2rem;
+    border-radius: 5px;
+    background: #e9e8ed;
+    border: 1px solid var(--bg);
+    border: none;
+    opacity: .8;
+}
+
+.language-card:hover {
+    transition: var(--transition);
+    opacity: 1;
+
+}
+
+.language-card img {
+    width: 3rem;
+    aspect-ratio: 1/1;
+    padding: 2px;
+}
+
+.language-card span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.language-card p {
+    font-size: 14px;
+}
