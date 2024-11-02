@@ -15,15 +15,16 @@ function typeText() {
     }
 }
 
-function resetText() {
+function resetText() 
+{
     heroElement.textContent = "";
     i = 0;
     typeText();
 }
 
-typeText();
-
-document.addEventListener('DOMContentLoaded', () => {
+typeText
+document.addEventListener('DOMContentLoaded', () => 
+    {
     const sidebarLinks = document.querySelectorAll('.hero-sidebar_details a');
     const sections = document.querySelectorAll('.main');
 

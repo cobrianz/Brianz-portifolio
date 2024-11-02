@@ -166,14 +166,16 @@ aside {
     transition: var(--transition);
 }
 
-.hero-sidebar_details {
+.hero-sidebar_details 
+{
     display: flex;
     flex-direction: column;
     padding: 0 2rem;
     gap: 1.5rem;
 }
 
-.hero-sidebar_details a {
+.hero-sidebar_details a 
+{
     color: var(--black);
     font-size: 1.2rem;
     display: flex;
@@ -556,4 +558,8 @@ aside {
 .copyright span {
     color: var(--bg);
     font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    
 }
