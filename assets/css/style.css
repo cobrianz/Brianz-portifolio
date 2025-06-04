@@ -831,7 +831,6 @@ li {
 
 .call-to-action-section p {
     font-size: var(--font-size-md);
-    color: rgba(255, 255, 255, 0.7);
     max-width: 600px;
     margin: var(--spacing-sm) 0;
     line-height: 1.6;
