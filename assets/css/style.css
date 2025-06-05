@@ -20,7 +20,7 @@
     --font-size-xxl: 2.5rem;
     --font-size-xxxl: 3.5rem;
     --sidebar-width: 300px;
-    --gradient-text: linear-gradient(90deg, slateblue, white, purple);
+    --gradient-text: linear-gradient(90deg, slateblue, #803f4a, purple);
 }
 
 /* Resets */
