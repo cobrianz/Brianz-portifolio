@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   modalContent.classList.remove("visible");
                   setTimeout(() => {
                     modal.style.display = "none";
-                  }, 500); // Match animation duration
+                  }, 500); 
                 }
               }, 2000);
             } else {
