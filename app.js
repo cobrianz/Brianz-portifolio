@@ -135,12 +135,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Contact Modal Trigger
+const here = document.getElementById("hero-container");
 function contact() {
   const modal = document.getElementById("contact-modal");
   if (modal) {
     const modalContent = modal.querySelector(".modal-content");
     if (modalContent) {
       modal.style.display = "flex";
+      here.style.display = "none"; 
       setTimeout(() => {
         modalContent.classList.add("visible");
       }, 10); // Slight delay to ensure display is applied
@@ -175,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalContent.classList.remove("visible");
         setTimeout(() => {
           modal.style.display = "none";
+          here.style.display = "flex"; 
         }, 500); // Match animation duration
       }
     });
@@ -186,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
           modalContent.classList.remove("visible");
           setTimeout(() => {
             modal.style.display = "none";
+            here.style.display = "flex"; 
           }, 500); // Match animation duration
         }
       }

@@ -7,6 +7,7 @@
       name="description"
       content="Portfolio of Brian Cheruiyot, a Fullstack Software Developer specializing in scalable web applications."
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta
       name="keywords"
       content="fullstack developer, web development, React, PHP, MySQL, portfolio"
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="hero">
+    <div class="hero" id="hero-container">
       <aside class="hero-sidebar">
         <div class="profile">
           <div class="img">
@@ -45,25 +46,25 @@
         </div>
         <div class="hero-sidebar_details">
           <a href="#" class="active" data-section="home"
-            ><span><i class="ph ph-house"></i></span>Home</a
+            ><span><i class="ph ph-house"></i></span><span>Home</span></a
           >
           <a href="#" data-section="about-me"
-            ><span><i class="ph ph-user"></i></span>About Me</a
+            ><span><i class="ph ph-user"></i></span><span>About Me</span></a
           >
           <a href="#" data-section="services"
-            ><span><i class="ph ph-grid-four"></i></span>Services</a
+            ><span><i class="ph ph-grid-four"></i></span><span>Services</span></a
           >
           <a href="#" data-section="resume"
-            ><span><i class="ph ph-scroll"></i></span>Resume</a
+            ><span><i class="ph ph-scroll"></i></span><span>Resume</span></a
           >
           <a href="#" data-section="projects"
-            ><span><i class="ph ph-code"></i></span>Projects</a
+            ><span><i class="ph ph-code"></i></span><span>Projects</span></a
           >
           <a href="#" data-section="blog"
-            ><span><i class="ph ph-article"></i></span>Blog</a
+            ><span><i class="ph ph-article"></i></span><span>Blog</span></a
           >
           <a href="#" data-section="contact"
-            ><span><i class="ph ph-envelope-simple"></i></span>Contact</a
+            ><span><i class="ph ph-envelope-simple"></i></span><span>Contact</span></a
           >
         </div>
       </aside>
@@ -79,10 +80,10 @@
                 <span>online resume</span>.
               </p>
               <div class="btns">
-                <a href="#contact" onclick="contact()"
+                <a href="#contact" onclick="contact()" class="btn"
                   ><span><i class="ph ph-paper-plane-tilt"></i></span>Hire Me</a
                 >
-                <a href="./assets/images/Brian Kipkemoi Cheruiyot-resume.docx" target="_blank"
+                <a href="./assets/images/Brian Kipkemoi Cheruiyot-resume.docx" target="_blank" class="btn"
                   ><span><i class="ph ph-scroll"></i></span>download Resume</a
                 >
               </div>
@@ -223,10 +224,7 @@
                 initial consultation to the final delivery. I take care of every
                 detail, allowing you to focus on what you do best.
               </p>
-              <a href="#projects" class="btn"
-                ><span><i class="ph ph-arrow-right"></i></span>Explore
-                projects</a
-              >
+          
             </div>
           </div>
           <div class="featured-projects-details">
@@ -371,7 +369,7 @@
         </div>
 
 
-        <!-- Only the #resume section is updated; replace the existing #resume div in your full HTML -->
+      
         <div id="resume" class="main-section" style="display: none">
           <div class="resume-container">
             <div class="resume-header">
@@ -566,7 +564,7 @@
                   </div>
                 </div>
               </div>
-              <div class="featured-project">
+              <div class="featured-project two">
                 <div>
                   <h3>Portfolio Website</h3>
                   <div class="techstacks">
@@ -896,6 +894,7 @@
         <span class="modal-close"><i class="ph ph-x"></i></span>
       </div>
     </div>
+    <i class="fa fa-envelope message" onclick="contact()" aria-hidden="true"></i>
     <script src="./app.js"></script>
   </body>
 </html>
