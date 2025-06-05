@@ -20,7 +20,7 @@
     --font-size-xxl: 2.5rem;
     --font-size-xxxl: 3.5rem;
     --sidebar-width: 300px;
-    --gradient-text: linear-gradient(90deg, #ff6f61, #ff3e97);
+    --gradient-text: linear-gradient(90deg, slateblue, white, purple);
 }
 
 /* Resets */
@@ -210,7 +210,7 @@ button {
 
 #hero {
     color: var(--bg);
-    font-size: var(--font-size-xxxl);
+    font-size: var(--font-size-xxl);
     white-space: nowrap;
 }
 
