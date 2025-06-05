@@ -1776,7 +1776,7 @@ button {
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
     .main-section{
         width: 100%;
         padding: 0;
