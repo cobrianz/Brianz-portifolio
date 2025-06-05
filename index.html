@@ -79,11 +79,11 @@
                 <span>online resume</span>.
               </p>
               <div class="btns">
-                <a href="#contact"
+                <a href="#contact" onclick="contact()"
                   ><span><i class="ph ph-paper-plane-tilt"></i></span>Hire Me</a
                 >
-                <a href="#resume"
-                  ><span><i class="ph ph-scroll"></i></span>View Resume</a
+                <a href="./assets/images/Brian Kipkemoi Cheruiyot-resume.docx" target="_blank"
+                  ><span><i class="ph ph-scroll"></i></span>download Resume</a
                 >
               </div>
               <div class="hero-main-details">
@@ -211,7 +211,7 @@
               </p>
             </div>
             <a href="#contact" class="btn"
-              ><span><i class="ph ph-whatsapp-logo"></i></span>Let's get in
+              ><span onclick="contact()"><i class="ph ph-whatsapp-logo"></i></span>Let's get in
               touch</a
             >
           </div>
@@ -315,7 +315,7 @@
             <div class="call-to-action-section">
               <h1>FROM CONCEPT TO CREATION</h1>
               <h2>LET’S MAKE IT HAPPEN!</h2>
-              <button class="get-in-touch-btn">
+              <button class="get-in-touch-btn" onclick="contact()">
                 Get in Touch <i class="ph ph-arrow-right"></i>
               </button>
               <p>I’m available for full-time roles & freelance projects.</p>
@@ -329,9 +329,48 @@
 
         <!-- SERVICES -->
         <div id="services" class="main-section" style="display: none">
-          <h1>Services</h1>
-          <p>Services content coming soon.</p>
+          <div class="services-section">
+            <span class="subheading">What I Offer</span>
+            <h1>My <span>Services</span></h1>
+            <p>
+              I provide a range of professional services to help bring your ideas to life. From crafting responsive websites to designing intuitive interfaces, I’m here to deliver top-notch solutions tailored to your needs.
+            </p>
+            <div class="services-container">
+              <div class="service-card">
+                <i class="ph ph-code" aria-hidden="true"></i>
+                <h3>Web Development</h3>
+                <p>Building responsive, high-performance websites using modern technologies like HTML, CSS, JavaScript, and React.</p>
+              </div>
+              <div class="service-card">
+                <i class="ph ph-paint-brush" aria-hidden="true"></i>
+                <h3>UI/UX Design</h3>
+                <p>Creating user-friendly and visually appealing interfaces with a focus on usability and seamless experiences.</p>
+              </div>
+              <div class="service-card">
+                <i class="ph ph-hard-drives" aria-hidden="true"></i>
+                <h3>Backend Development</h3>
+                <p>Developing robust server-side applications using PHP, Node.js, and MySQL to power your web solutions.</p>
+              </div>
+              <div class="service-card">
+                <i class="ph ph-database" aria-hidden="true"></i>
+                <h3>Database Management</h3>
+                <p>Designing and optimizing databases with MySQL and MongoDB for efficient data storage and retrieval.</p>
+              </div>
+              <div class="service-card">
+                <i class="ph ph-cloud" aria-hidden="true"></i>
+                <h3>Cloud Deployment</h3>
+                <p>Deploying and managing applications on cloud platforms like Vercel and AWS for scalability and reliability.</p>
+              </div>
+              <div class="service-card">
+                <i class="ph ph-git-branch" aria-hidden="true"></i>
+                <h3>Version Control</h3>
+                <p>Implementing Git workflows for collaborative development and efficient code version management.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+
         <!-- Only the #resume section is updated; replace the existing #resume div in your full HTML -->
         <div id="resume" class="main-section" style="display: none">
           <div class="resume-container">
@@ -627,18 +666,235 @@
         <!-- BLOG -->
 
         <div id="blog" class="main-section" style="display: none">
-          <h1>Blog</h1>
-          <p>Blog content coming soon.</p>
+          <div class="blog-section">
+            <span class="subheading">Latest Insights</span>
+            <h1>My <span>Blog</span></h1>
+            <p>
+              Explore my latest articles and tutorials on web development, design, and technology. Stay updated with tips and trends to enhance your projects.
+            </p>
+            <div class="blog-controls">
+              <input type="text" id="blog-search" placeholder="Search blogs..." class="search-bar" />
+              <div class="blog-topics">
+                <button class="topic-btn active" data-topic="all">All</button>
+                <button class="topic-btn" data-topic="web">Web Development</button>
+                <button class="topic-btn" data-topic="design">UI/UX Design</button>
+                <button class="topic-btn" data-topic="backend">Backend Development</button>
+              </div>
+            </div>
+            <div class="blog-container">
+              <div class="blog-post" data-topic="web" data-target="blog1">
+                <img src="./assets/images/blog1.jpg" alt="Responsive Design" loading="lazy" />
+                <h3>Mastering Responsive Design</h3>
+                <p class="excerpt">Learn the best practices for creating responsive websites that work seamlessly across all devices.</p>
+              </div>
+              <div class="blog-post" data-topic="web" data-target="blog2">
+                <img src="./assets/images/blog2.png" alt="React Hooks" loading="lazy" />
+                <h3>Introduction to React Hooks</h3>
+                <p class="excerpt">Dive into the world of React Hooks and how they simplify state management in your applications.</p>
+              </div>
+              <div class="blog-post" data-topic="backend" data-target="blog3">
+                <img src="./assets/images/blog3.jpg" alt="Database Queries" loading="lazy" />
+                <h3>Optimizing Database Queries</h3>
+                <p class="excerpt">Discover techniques to improve the performance of your MySQL and MongoDB database queries.</p>
+              </div>
+            </div>
+            <div class="blog-full-content" id="blog1" style="display: none">
+              <div class="blog-content">
+                <h3>Mastering Responsive Design</h3>
+                <img src="./assets/images/blog1.jpg" alt="Responsive Design" loading="lazy" />
+                <p>
+                  Responsive design is a crucial skill for any modern web developer. With the proliferation of devices—smartphones, tablets, laptops, and desktops—it’s essential to ensure your website looks great and functions seamlessly across all screen sizes. In this article, I’ll share best practices to help you master responsive design.
+                </p>
+                <h4>Why Responsive Design Matters</h4>
+                <p>
+                  A responsive website adapts its layout based on the device’s screen size, improving user experience and accessibility. Google also prioritizes mobile-friendly websites in its search rankings, making responsive design a key factor for SEO.
+                </p>
+                <h4>Key Techniques</h4>
+                <ul>
+                  <li><strong>Fluid Grids:</strong> Use relative units like percentages or viewport units (vw, vh) instead of fixed pixels to create flexible layouts.</li>
+                  <li><strong>Media Queries:</strong> Apply CSS rules for different screen sizes using media queries, e.g., <code>@media (max-width: 768px) { ... }</code>.</li>
+                  <li><strong>Flexible Images:</strong> Ensure images scale properly with <code>max-width: 100%</code> to prevent overflow.</li>
+                </ul>
+                <h4>Practical Example</h4>
+                <p>
+                  Consider a simple two-column layout that stacks on mobile devices:
+                </p>
+                <pre><code>.container { display: flex; gap: 20px; }
+        .column { flex: 1; }
+        @media (max-width: 768px) { .container { flex-direction: column; } }</code></pre>
+                <p>
+                  By following these techniques, you can create websites that provide a seamless experience across all devices, enhancing both user satisfaction and your site’s performance.
+                </p>
+              </div>
+              <a href="#blog" class="back-to-blog"><i class="ph ph-arrow-left" aria-hidden="true"></i>Back to Blogs </a>
+            </div>
+            <div class="blog-full-content" id="blog2" style="display: none">
+              <div class="blog-content">
+                <h3>Introduction to React Hooks</h3>
+                <img src="./assets/images/blog2.png" alt="React Hooks" loading="lazy" />
+                <p>
+                  React Hooks, introduced in React 16.8, revolutionized how developers manage state and side effects in functional components. Before Hooks, stateful logic required class components, often leading to complex code. This article introduces the basics of React Hooks and how they can simplify your development process.
+                </p>
+                <h4>What Are React Hooks?</h4>
+                <p>
+                  Hooks are functions that let you “hook into” React state and lifecycle features from functional components. The most commonly used hooks are <code>useState</code> and <code>useEffect</code>.
+                </p>
+                <h4>Using useState</h4>
+                <p>
+                  The <code>useState</code> hook allows you to add state to functional components. Here’s a simple counter example:
+                </p>
+                <pre><code>import React, { useState } from 'react';
+                        function Counter() {
+                          const [count, setCount] = useState(0);
+                          return (
+            <div>
+              <p>You clicked {count} times</p>
+              <button onClick={() => setCount(count + 1)}>Click me</button>
+            </div>
+          );
+        }</code></pre>
+                <h4>Using useEffect</h4>
+                <p>
+                  The <code>useEffect</code> hook handles side effects, such as fetching data or updating the DOM. Here’s an example of fetching data:
+                </p>
+                <pre><code>import React, { useState, useEffect } from 'react';
+        function DataFetcher() {
+          const [data, setData] = useState(null);
+          useEffect(() => {
+            fetch('https://api.example.com/data')
+              .then(response => response.json())
+              .then(data => setData(data));
+          }, []);
+          return <div>{data ? data.message : 'Loading...'}</div>;
+        }</code></pre>
+                <p>
+                  React Hooks simplify your code by eliminating the need for class components, making your applications easier to maintain and understand.
+                </p>
+              </div>
+              <a href="#blog" class="back-to-blog"><i class="ph ph-arrow-left" aria-hidden="true"></i>Back to Blogs </a>
+            </div>
+            <div class="blog-full-content" id="blog3" style="display: none">
+              <div class="blog-content">
+                <h3>Optimizing Database Queries</h3>
+                <img src="./assets/images/blog3.jpg" alt="Database Queries" loading="lazy" />
+                <p>
+                  Efficient database queries are critical for application performance, especially when dealing with large datasets. In this article, I’ll share techniques to optimize queries in MySQL and MongoDB, two popular databases I frequently use in my projects.
+                </p>
+                <h4>Why Optimize Queries?</h4>
+                <p>
+                  Slow queries can lead to poor user experiences and increased server load. Optimizing queries reduces response times and improves scalability.
+                </p>
+                <h4>MySQL Optimization Tips</h4>
+                <ul>
+                  <li><strong>Use Indexes:</strong> Add indexes to frequently queried columns to speed up searches, e.g., <code>CREATE INDEX idx_name ON users(name);</code>.</li>
+                  <li><strong>Avoid SELECT *:</strong> Specify only the columns you need, e.g., <code>SELECT name, email FROM users;</code>.</li>
+                  <li><strong>Analyze Queries:</strong> Use <code>EXPLAIN</code> to understand query execution plans and identify bottlenecks.</li>
+                </ul>
+                <h4>MongoDB Optimization Tips</h4>
+                <ul>
+                  <li><strong>Use Indexes:</strong> Create indexes on fields used in queries, e.g., <code>db.users.createIndex({ email: 1 });</code>.</li>
+                  <li><strong>Limit Fields:</strong> Use projection to return only necessary fields, e.g., <code>db.users.find({}, { name: 1, email: 1 });</code>.</li>
+                  <li><strong>Aggregate Efficiently:</strong> Optimize aggregation pipelines by filtering early with <code>$match</code>.</li>
+                </ul>
+                <p>
+                  By applying these techniques, you can significantly improve your application’s performance, ensuring a smooth experience for your users.
+                </p>
+              </div>
+              <a href="#blog" class="back-to-blog"><i class="ph ph-arrow-left" aria-hidden="true"></i>Back to Blogs </a>
+            </div>
+          </div>
         </div>
 
         <!-- CONTACT -->
         <div id="contact" class="main-section" style="display: none">
-          <h1>Contact</h1>
-          <p>Contact content coming soon.</p>
+          <div class="contact-section">
+            <span class="subheading">Get in Touch</span>
+            <h1>Contact <span>Me</span></h1>
+            <p>
+              I’d love to hear from you! Whether you have a project idea, need assistance, or just want to chat, feel free to reach out.
+            </p>
+            <div class="contact-container">
+              <div class="contact-details">
+                <h3>My Details</h3>
+                <div class="detail-item">
+                  <i class="ph ph-envelope"></i>
+                  <p><strong>Email:</strong> briancheruiyot022@gmail.com</p>
+                </div>
+                <div class="detail-item">
+                  <i class="ph ph-phone"></i>
+                  <p><strong>Phone:</strong> +254 702 764 907</p>
+                </div>
+                <div class="detail-item">
+                  <i class="ph ph-map-pin"></i>
+                  <p><strong>Location:</strong> Nairobi, Kenya</p>
+                </div>
+                <div class="detail-item">
+                  <i class="ph ph-clock"></i>
+                  <p><strong>Time:</strong> always available</p>
+                </div>
+              </div>
+              <div class="contact-form">
+                <h3>Reach out</h3>
+                <form id="contact-form-section">
+                  <input type="text" id="name-section" placeholder="Your Name" required />
+                  <input type="email" id="email-section" placeholder="Your Email" required />
+                  <textarea id="message-section" placeholder="Your Message" rows="5" required></textarea>
+                  <button type="submit">Hire me<i class="ph ph-paper-plane-tilt"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    
+    
 
+
+
+    <div id="contact-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-left">
+          <div class="modal-details">
+            <h3>My Details</h3>
+            <div class="detail-item">
+              <i class="ph ph-envelope"></i>
+              <p><strong>Email:</strong> briancheruiyot022@gmail.com</p>
+            </div>
+            <div class="detail-item">
+              <i class="ph ph-phone"></i>
+              <p><strong>Phone:</strong> +254 702 764 907</p>
+            </div>
+            <div class="detail-item">
+              <i class="ph ph-map-pin"></i>
+              <p><strong>Location:</strong> Nairobi, Kenya</p>
+            </div>
+            <div class="detail-item">
+              <i class="ph ph-clock"></i>
+              <p><strong>Time:</strong> 02:45 PM EAT, Thursday, June 05, 2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-right">
+          <div class="modal-form">
+            <h3>Let’s Connect</h3>
+            <form id="contact-form-modal">
+              <input type="text" id="name-modal" placeholder="Your Name" required />
+              <input type="email" id="email-modal" placeholder="Your Email" required />
+              <textarea id="message-modal" placeholder="Your Message" rows="4" required></textarea>
+              <button type="submit">Reach out <i class="ph ph-paper-plane-tilt"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-overlay" style="display: none">
+          <div class="modal-status">
+            <div class="loading-spinner"></div>
+            <p id="modal-status-text"></p>
+          </div>
+        </div>
+        <span class="modal-close"><i class="ph ph-x"></i></span>
+      </div>
+    </div>
     <script src="./app.js"></script>
   </body>
 </html>
