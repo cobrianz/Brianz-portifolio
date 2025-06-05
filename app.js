@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     '.hero-sidebar_details a[data-section="home"]'
   );
 
-  // Initialize page to show homepage (#home) on load
   if (homeSection && homeLink) {
     sections.forEach((section) => {
       section.style.display = "none";
