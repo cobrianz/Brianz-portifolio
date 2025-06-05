@@ -846,7 +846,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-md);
     width: 100%;
     text-align: center;
     padding: var(--spacing-xl);
@@ -936,7 +936,7 @@ button {
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--black); /* Black text for white background */
+    color: var(--black); 
 }
 
 .blog-section h1 {
@@ -1318,7 +1318,6 @@ button {
     overflow: hidden;
     display: flex;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    flex-wrap: wrap;
 }
 
 .modal-left,
@@ -1558,8 +1557,10 @@ button {
     flex-direction: column;
     position: fixed;
     top: 50%;
-    left: 2rem;
+    left: 1rem;
     background: transparent;
+    transform: translateY(-50%);
+    z-index: 10000;
 }
 .social-icons a{
     background-color: var(--white);
@@ -1740,6 +1741,212 @@ button {
 .featured-projects-details.projects .featured-project.two {
   flex-direction: column-reverse;
 }
+.modal-left,
+.modal-right{
+    padding: 3rem;
+}
+.modal-content{
+    width: 900px;
+    max-width: 1100px;
+    
+}
 
+.modal-details p{
+    font-size: 1rem;
+}
+
+}
+
+@media screen and (max-width: 900px) {
+    .modal-left,
+.modal-right{
+    padding: 2rem;
+    border: none;
+}
+
+.modal{
+    background: transparent;
+}
+    .modal-content{
+        flex-direction: column-reverse;
+        width: 80%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .main-section{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+
+    .btn{
+        font-size: 12px;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    .btns{
+        width: 100%;
+    }
+    .hero-right > div {
+        width: 250px;
+        height: 250px;
+    }
+    .hero-right img{
+        width: 250px;
+        height: 250px;
+    }
+
+    #hero{
+        font-size: 1.5rem;
+    }
+  
+    .hero-main h3{
+        font-size: .8rem;
+    }
+
+    .hero-main-detail{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-main-detail span {
+        font-size: 2rem;
+        border: none;
+    }
+    .brief-me-details p{
+        font-size: 1rem;
+    }
+   .languages-container{
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+
+   }
+
+    .language-card {
+        width: 100%;
+        padding: var(--spacing-md);
+        align-items: center;
+    }
+
+    .hero-sidebar_details{
+        font-size: 12px;
+        gap: 1.5rem;
+        margin-bottom: 0;
+        padding-top: 1.5rem;
+        background: var(--bg);
+    }
+
+    .hero-sidebar_details a{
+        font-size: 10px;
+        border-radius: 50%;
+        padding: .2rem;
+        color: var(--white);
+    }
+
+    .hero-sidebar_details a.active{
+        border: 1px solid var(--white);
+    }
+
+    .hero-feature{
+        padding: 1rem;
+    }
+
+    .hero-feature h1{
+        font-size: .8rem;
+        width: 100%;
+    }
+
+    .hero-feature .btn{
+        width: fit-content;
+    } 
+
+    .about-me-content h1{
+        margin: 0;
+        padding: 0;
+        font-size: 2rem;
+    }
+
+    .services-section{
+        padding: 0;
+    }
+    .services-section h1{
+        font-size: 2rem;
+    }
+
+    .featured-project{
+        gap: 1rem;
+
+    }
+
+    .project_imag{
+        width: 100%;
+        height: auto;
+    }
+
+    .project-section{
+        gap: .5rem;
+    }
+    .blog-section{
+        gap: .5rem;
+        padding: 0;
+    }
+    .blog-section h1{
+        font-size: 2rem;
+    }
+    .contact-section{
+        gap: .5rem;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .resume-container{
+        padding: 0;
+    }
+
+    .contact-section h1{
+        font-size: 2rem;
+    }
+
+    .contact-section .contact-container{
+        width: 100%;
+        }
+
+        .resume-header h1{
+        font-size: 1rem;
+        }
+
+        .featured-projects{
+            gap: 1rem;
+        }
+.featured-projects h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.featured-projects p{
+    padding: 0;
+}
+
+.featured-projects-details.projects{
+    gap: 1rem;
+
+}
+
+.featured-projects-details.projects .featured-project {
+    margin: 0;
+}
+
+.modal-left{
+    display: none;
+}
 
 }
