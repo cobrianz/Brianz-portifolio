@@ -1667,6 +1667,7 @@ button {
     gap: var(--spacing-md);
     margin: 0;
     padding: 0;
+    justify-content: center;
   }
 
   .languages-container .language-card {
