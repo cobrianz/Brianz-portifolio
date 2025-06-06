@@ -1674,7 +1674,7 @@ button {
     width: 150px;
     border: 1px solid var(--bg-1);
     margin: 0;
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .language-card img {
