@@ -1663,18 +1663,17 @@ button {
   }
 
   .languages-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    width: 100%;
     gap: var(--spacing-md);
-    flex-wrap: wrap;
     margin: 0;
+    padding: 0;
   }
 
   .languages-container .language-card {
     width: 150px;
     border: 1px solid var(--bg-1);
     margin: 0;
-    padding: 1rem;
+    padding: .8rem;
   }
 
   .language-card img {
@@ -1860,9 +1859,9 @@ button {
     font-size: 1rem;
   }
   .languages-container {
-    flex-direction: column;
-    margin: auto;
-    gap: var(--spacing-md);
+    margin: 0 auto;
+    justify-content: center;
+    gap: var(--spacing-sm);
   }
 
   .language-card {
