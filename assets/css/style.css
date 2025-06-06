@@ -1179,7 +1179,7 @@ button {
 }
 
 .contact-section h1 span {
-  ground: var(--gradient-text);
+  color: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
