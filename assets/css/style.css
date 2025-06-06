@@ -1609,7 +1609,6 @@ button {
   .message {
     font-size: var(--font-size-xl);
     padding: sm;
-    display: none;
   }
 
   .hero-main {
@@ -1810,6 +1809,9 @@ button {
     padding: 0;
     margin-bottom: 4rem;
   }
+  .message{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1944,6 +1946,8 @@ button {
   .contact-section h1 {
     font-size: 2rem;
   }
+
+ 
 
   .contact-section .contact-container {
     width: 100%;
