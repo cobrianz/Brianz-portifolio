@@ -1608,7 +1608,8 @@ button {
 
   .message {
     font-size: var(--font-size-xl);
-    padding: var(--spacing-sm);
+    padding: sm;
+    display: none;
   }
 
   .hero-main {
