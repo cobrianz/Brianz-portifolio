@@ -1,3 +1,8 @@
+// EmailJS Initialization (single initialization)
+document.addEventListener("DOMContentLoaded", () => {
+  emailjs.init("N_zB7QJt4YSPXyryW");
+});
+
 // Typing Animation
 const texts = [
   "Fullstack Software Developer",
@@ -7,7 +12,6 @@ const texts = [
 ];
 const typingSpeed = 150;
 const resetDelay = 2000;
-
 let i = 0; // Character index
 let textIndex = 0; // Current phrase index
 const heroElement = document.getElementById("hero");
@@ -66,17 +70,23 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetSection = document.getElementById(
         link.getAttribute("data-section")
       );
-      sections.forEach((section) => {
-        section.style.display = "none";
-        section.style.opacity = "0";
-      });
-      sidebarLinks.forEach((link) => link.classList.remove("active"));
-      targetSection.style.display = "block";
-      setTimeout(() => {
-        targetSection.style.opacity = "1";
-      }, 10);
-      link.classList.add("active");
-      window.scrollTo({ top: targetSection.offsetTop, behavior: "smooth" });
+      if (targetSection) {
+        sections.forEach((section) => {
+          section.style.display = "none";
+          section.style.opacity = "0";
+        });
+        sidebarLinks.forEach((link) => link.classList.remove("active"));
+        targetSection.style.display = "block";
+        setTimeout(() => {
+          targetSection.style.opacity = "1";
+        }, 10);
+        link.classList.add("active");
+        window.scrollTo({ top: targetSection.offsetTop, behavior: "smooth" });
+      } else {
+        console.error(
+          `Section with ID ${link.getAttribute("data-section")} not found.`
+        );
+      }
     });
   });
 });
@@ -92,10 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
   blogPosts.forEach((post) => {
     post.addEventListener("click", () => {
       const targetId = post.getAttribute("data-target");
-      blogContainer.style.display = "none";
-      fullContents.forEach((content) => {
-        content.style.display = content.id === targetId ? "block" : "none";
-      });
+      if (targetId) {
+        blogContainer.style.display = "none";
+        fullContents.forEach((content) => {
+          content.style.display = content.id === targetId ? "block" : "none";
+        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
   });
 
@@ -104,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       fullContents.forEach((content) => (content.style.display = "none"));
       blogContainer.style.display = "grid";
+      window.scrollTo({ top: blogContainer.offsetTop, behavior: "smooth" });
     });
   });
 
@@ -134,17 +148,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Contact Modal Trigger
-const here = document.getElementById("hero-container");
+const heroContainer = document.getElementById("hero-container");
 function contact() {
   const modal = document.getElementById("contact-modal");
   if (modal) {
     const modalContent = modal.querySelector(".modal-content");
     if (modalContent) {
       modal.style.display = "flex";
-      here.style.display = "none";
+      heroContainer.style.display = "none";
       setTimeout(() => {
         modalContent.classList.add("visible");
-      }, 10); // Slight delay to ensure display is applied
+      }, 10);
     }
     // Update time dynamically
     const modalTimeElement = modal.querySelector(".detail-item:last-child p");
@@ -155,7 +169,13 @@ function contact() {
     const timeString = `${now.toLocaleTimeString("en-US", {
       timeZone: "Africa/Nairobi",
       hour12: true,
-    })} ${now.toLocaleDateString("en-US", { timeZone: "Africa/Nairobi" })}`;
+    })} EAT, ${now.toLocaleDateString("en-US", {
+      timeZone: "Africa/Nairobi",
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })}`;
     if (modalTimeElement) modalTimeElement.textContent = `Time: ${timeString}`;
     if (sectionTimeElement)
       sectionTimeElement.textContent = `Time: ${timeString}`;
@@ -176,8 +196,8 @@ document.addEventListener("DOMContentLoaded", () => {
         modalContent.classList.remove("visible");
         setTimeout(() => {
           modal.style.display = "none";
-          here.style.display = "flex";
-        }, 500); // Match animation duration
+          heroContainer.style.display = "flex";
+        }, 500);
       }
     });
 
@@ -188,8 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
           modalContent.classList.remove("visible");
           setTimeout(() => {
             modal.style.display = "none";
-            here.style.display = "flex";
-          }, 500); // Match animation duration
+            heroContainer.style.display = "flex";
+          }, 500);
         }
       }
     });
@@ -197,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Modal or close button not found.");
   }
 
-  // Form Submission Handler (for both section and modal forms)
+  // Form Submission Handler
   const forms = [
     { formId: "contact-form-section", isModal: false },
     { formId: "contact-form-modal", isModal: true },
@@ -214,6 +234,26 @@ document.addEventListener("DOMContentLoaded", () => {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
+        // Client-side validation
+        const email = form.querySelector(
+          `#${
+            formId === "contact-form-section" ? "email-section" : "email-modal"
+          }`
+        ).value;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          if (isModal && statusText) {
+            statusText.textContent = "Please enter a valid email address.";
+            statusText.classList.add("error");
+            overlay.style.display = "flex";
+            setTimeout(() => {
+              overlay.style.display = "none";
+            }, 2000);
+          } else {
+            alert("Please enter a valid email address.");
+          }
+          return;
+        }
+
         if (isModal && overlay && statusText) {
           overlay.style.display = "flex";
           statusText.textContent = "Sending...";
@@ -225,11 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
             formId === "contact-form-section" ? "name-section" : "name-modal"
           }`
         ).value;
-        const email = form.querySelector(
-          `#${
-            formId === "contact-form-section" ? "email-section" : "email-modal"
-          }`
-        ).value;
         const message = form.querySelector(
           `#${
             formId === "contact-form-section"
@@ -238,12 +273,8 @@ document.addEventListener("DOMContentLoaded", () => {
           }`
         ).value;
 
-        (function () {
-          emailjs.init("c1dFnCPprDh3Ajuc3Vccf");
-        })();
-
         emailjs
-          .send("service_ic6e6mk", "template_contact_form", {
+          .send("service_ic6e6mk", "template_l40xzeq", {
             from_name: name,
             from_email: email,
             message: message,
@@ -260,6 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   modalContent.classList.remove("visible");
                   setTimeout(() => {
                     modal.style.display = "none";
+                    heroContainer.style.display = "flex";
                   }, 500);
                 }
               }, 2000);
