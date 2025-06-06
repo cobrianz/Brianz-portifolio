@@ -141,7 +141,7 @@ function contact() {
     const modalContent = modal.querySelector(".modal-content");
     if (modalContent) {
       modal.style.display = "flex";
-      here.style.display = "none"; 
+      here.style.display = "none";
       setTimeout(() => {
         modalContent.classList.add("visible");
       }, 10); // Slight delay to ensure display is applied
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalContent.classList.remove("visible");
         setTimeout(() => {
           modal.style.display = "none";
-          here.style.display = "flex"; 
+          here.style.display = "flex";
         }, 500); // Match animation duration
       }
     });
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
           modalContent.classList.remove("visible");
           setTimeout(() => {
             modal.style.display = "none";
-            here.style.display = "flex"; 
+            here.style.display = "flex";
           }, 500); // Match animation duration
         }
       }
@@ -238,13 +238,12 @@ document.addEventListener("DOMContentLoaded", () => {
           }`
         ).value;
 
-        // EmailJS setup (replace with your credentials)
         (function () {
-          emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+          emailjs.init("c1dFnCPprDh3Ajuc3Vccf");
         })();
 
         emailjs
-          .send("YOUR_SERVICE_ID", "template_contact_form", {
+          .send("service_ic6e6mk", "template_contact_form", {
             from_name: name,
             from_email: email,
             message: message,
@@ -261,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   modalContent.classList.remove("visible");
                   setTimeout(() => {
                     modal.style.display = "none";
-                  }, 500); 
+                  }, 500);
                 }
               }, 2000);
             } else {
