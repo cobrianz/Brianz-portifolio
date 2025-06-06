@@ -1861,7 +1861,7 @@ button {
   .languages-container {
     margin: 0 auto;
     justify-content: space-evenly;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
   }
 
   .language-card {
