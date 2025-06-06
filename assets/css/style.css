@@ -1860,8 +1860,8 @@ button {
   }
   .languages-container {
     margin: 0 auto;
-    justify-content: space-evenly;
-    gap: var(--spacing-md);
+    justify-content: center;
+    gap: 2rem;
   }
 
   .language-card {
