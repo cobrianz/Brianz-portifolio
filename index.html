@@ -15,10 +15,12 @@
     <title>Brian Cheruiyot</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   </head>
   <body>
     <div class="hero" id="hero-container">
-      <aside class="hero-sidebar">
+      <aside class="hero-sidebar" data-aos="fade-right" data-aos-duration="1000">
         <div class="profile">
           <div class="img">
             <img
@@ -891,5 +893,8 @@
     </div>
     <i class="fa fa-envelope message" onclick="contact()" aria-hidden="true"></i>
     <script src="./app.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
