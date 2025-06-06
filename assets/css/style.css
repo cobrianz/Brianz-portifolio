@@ -1860,7 +1860,7 @@ button {
   }
   .languages-container {
     margin: 0 auto;
-    justify-content: center;
+    justify-content: space-between;
     gap: var(--spacing-sm);
   }
 
