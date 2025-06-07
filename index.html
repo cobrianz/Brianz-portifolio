@@ -69,7 +69,7 @@
       </aside>
       <div class="main-content">
         <div id="home" class="main-section">
-          <div class="main-details">
+          <div class="main-details home">
             <div class="hero-main">
               <h3>HI, I'M A DEVELOPER</h3>
               <h1 id="hero"></h1>
@@ -120,9 +120,8 @@
                 more about my experience? Check out my <span>resume</span> and
                 <span>project catalog</span>.
               </p>
-              <a href="#projects" class="btn"
-                ><span><i class="ph ph-arrow-right"></i></span>Explore
-                projects</a
+              <a href="#projects" class="btn reach" onclick="contact()"
+                >Reach Out <i class="ph ph-paper-plane-tilt"></i></a
               >
             </div>
           </div>
@@ -233,14 +232,13 @@
                 alt="Car Rental App screenshot"
                 loading="lazy"
               />
+              <span class="project_details_home">
               <div class="techstacks">
                 <span>Git</span>
                 <span>React</span>
                 <span>Web Development</span>
               </div>
-              <span class="project_details">
                 <h3>Car Rental App</h3>
-                <a href="#"><i class="ph ph-arrow-up-right"></i></a>
               </span>
             </div>
             <div class="featured-project home">
@@ -249,14 +247,13 @@
                 alt="Salesforce CRM screenshot"
                 loading="lazy"
               />
+              <span class="project_details_home">
               <div class="techstacks">
                 <span>PHP</span>
                 <span>Tailwind</span>
                 <span>MySQL</span>
               </div>
-              <span class="project_details">
-                <h3>Salesforce CRM - Invoice Management</h3>
-                <a href="#"><i class="ph ph-arrow-up-right"></i></a>
+                <h3>Salesforce CRM</h3>
               </span>
             </div>
           </div>
@@ -891,7 +888,7 @@
         <span class="modal-close"><i class="ph ph-x"></i></span>
       </div>
     </div>
-    <i class="fa fa-envelope message" onclick="contact()" aria-hidden="true"></i>
+    <i class="fa fa-envelope message" onclick="toggleContact()" aria-hidden="true"></i>
     <script src="./app.js"></script>
     <script>
       AOS.init();

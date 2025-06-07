@@ -216,7 +216,35 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Modal or close button not found.");
   }
+});
 
+function toggleContact() {
+  const modal = document.getElementById("contact-modal");
+  const heroContainer = document.getElementById("hero-container");
+  if (modal && heroContainer) {
+    const modalContent = modal.querySelector(".modal-content");
+    if (modalContent) {
+      if (modal.style.display === "flex") {
+        // Close the modal
+        modalContent.classList.remove("visible");
+        setTimeout(() => {
+          modal.style.display = "none";
+          heroContainer.style.display = "flex";
+        }, 500);
+      } else {
+        // Open the modal
+        modal.style.display = "flex";
+        heroContainer.style.display = "none";
+        setTimeout(() => {
+          modalContent.classList.add("visible");
+          updateTimeDisplay();
+        }, 10);
+      }
+    }
+  } else {
+    console.error("Contact modal or hero container not found.");
+  }
+}
   // Form Submission Handler
   const forms = [
     { formId: "contact-form-section", isModal: false },
@@ -225,12 +253,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   forms.forEach(({ formId, isModal }) => {
     const form = document.getElementById(formId);
-    const overlay = isModal ? document.querySelector(".modal-overlay") : null;
+    const overlay = isModal
+      ? document.querySelector(".modal-overlay")
+      : document.querySelector(".form-overlay");
     const statusText = isModal
       ? document.getElementById("modal-status-text")
-      : null;
+      : document.getElementById("form-status-text");
 
-    if (form) {
+    if (form && overlay && statusText) {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -241,24 +271,19 @@ document.addEventListener("DOMContentLoaded", () => {
           }`
         ).value;
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          if (isModal && statusText) {
-            statusText.textContent = "Please enter a valid email address.";
-            statusText.classList.add("error");
-            overlay.style.display = "flex";
-            setTimeout(() => {
-              overlay.style.display = "none";
-            }, 2000);
-          } else {
-            alert("Please enter a valid email address.");
-          }
+          statusText.textContent = "Please enter a valid email address.";
+          statusText.classList.add("error");
+          overlay.style.display = "flex";
+          setTimeout(() => {
+            overlay.style.display = "none";
+            statusText.classList.remove("error");
+          }, 2000);
           return;
         }
 
-        if (isModal && overlay && statusText) {
-          overlay.style.display = "flex";
-          statusText.textContent = "Sending...";
-          statusText.classList.remove("success", "error");
-        }
+        overlay.style.display = "flex";
+        statusText.textContent = "Sending...";
+        statusText.classList.remove("success", "error");
 
         const name = form.querySelector(
           `#${
@@ -281,11 +306,12 @@ document.addEventListener("DOMContentLoaded", () => {
             reply_to: email,
           })
           .then(() => {
-            if (isModal && overlay && statusText) {
-              statusText.textContent = "Message sent successfully!";
-              statusText.classList.add("success");
-              setTimeout(() => {
-                overlay.style.display = "none";
+            statusText.textContent = "Message sent successfully!";
+            statusText.classList.add("success");
+            setTimeout(() => {
+              overlay.style.display = "none";
+              statusText.classList.remove("success");
+              if (isModal) {
                 const modalContent = modal.querySelector(".modal-content");
                 if (modalContent) {
                   modalContent.classList.remove("visible");
@@ -294,28 +320,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     heroContainer.style.display = "flex";
                   }, 500);
                 }
-              }, 2000);
-            } else {
-              alert("Message sent successfully!");
-            }
-            form.reset();
+              }
+              form.reset();
+            }, 2000);
           })
           .catch((error) => {
-            if (isModal && overlay && statusText) {
-              statusText.textContent =
-                "Failed to send message. Please try again.";
-              statusText.classList.add("error");
-              setTimeout(() => {
-                overlay.style.display = "none";
-              }, 2000);
-            } else {
-              alert("Failed to send message. Please try again.");
-            }
+            statusText.textContent =
+              "Failed to send message. Please try again.";
+            statusText.classList.add("error");
+            setTimeout(() => {
+              overlay.style.display = "none";
+              statusText.classList.remove("error");
+            }, 2000);
             console.error("EmailJS error:", error);
           });
       });
     } else {
-      console.error(`Form with ID ${formId} not found.`);
+      console.error(
+        `Form with ID ${formId}, overlay, or status text not found.`
+      );
     }
   });
-});
