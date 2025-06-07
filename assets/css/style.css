@@ -2047,6 +2047,13 @@ button {
     margin: 0;
   }
 
+  .featured-projects.projects{
+    width: 100%;
+  }
+
+  .featured-projects.projects>p{
+    font-size: 14px;
+  }
   .featured-projects p {
     padding: 0;
   }
