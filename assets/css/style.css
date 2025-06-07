@@ -65,6 +65,8 @@ button {
   gap: var(--spacing-md);
   min-height: 100vh;
   width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 .hero-sidebar {
@@ -446,6 +448,8 @@ button {
   margin: 0 auto;
 }
 
+
+
 .featured-projects .subheading {
   font-size: var(--font-size-sm);
   font-weight: 500;
@@ -534,7 +538,9 @@ button {
   padding: var(--spacing-lg) 0;
   width: 50%;
   position: relative;
+  overflow: hidden;
 }
+
 
 .featured-project img {
   width: 100%;
@@ -605,6 +611,70 @@ button {
 
 .tech-icons img:hover {
   transform: scale(1.1);
+}
+
+.project-description{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+  color: var(--bg);
+}
+/* Contact Form Overlay */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-status {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#form-status-text {
+  font-size: 16px;
+  color: #333;
+}
+
+#form-status-text.success {
+  color: #28a745;
+}
+
+#form-status-text.error {
+  color: #dc3545;
 }
 
 /* Previous Styles */
